@@ -4,8 +4,7 @@
 
 ## 将修改 git 全局配置文件，让 GitHub 和 gitee 同时可以个更新代码 文件路径: .git/config
 
-```plaintext
-<span style="color:green">
+```javascript
 [core]
 repositoryformatversion = 0
 filemode = false
@@ -22,12 +21,11 @@ fetch = +refs/heads/_:refs/remotes/origin/_
 [branch "main"]
 remote = origin
 merge = refs/heads/main
-</span>
 ```
 
 ## 将代码提交到两个远程仓库
 
-```bash
+```javascript
 PS D:\Code\Electron\v2024> git  add .  //提交全部代码
 PS D:\Code\Electron\v2024> git  commit -m 'feat: 修改代码'  //代码备注
 [main 2694cf6] feat: 修改代码
