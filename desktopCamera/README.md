@@ -2,9 +2,9 @@
 
 桌面摄像头项目
 
-## 修改主进程入口
+## 修改主进程入口 文件路径: desktopCamera\package.json
 
-```javascript desktopCamera\package.json
+```javascript
 {
   "name": "desktopCamera",
   "version": "1.0.0",

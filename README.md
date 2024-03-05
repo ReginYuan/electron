@@ -2,7 +2,7 @@
 
 向后盾人学习技术练习代码
 
-# 将修改 git 全局配置文件，让 GitHub 和 gitee 同时可以个更新代码
+# 将修改 git 全局配置文件，让 GitHub 和 gitee 同时可以个更新代码 文件 .git/config
 
 ```git
 [core]
