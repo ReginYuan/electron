@@ -1,4 +1,4 @@
-# electron 练手项目
+# electron-practice 练手项目
 
 electron学习练手代码,记录每个项目的成长
 
