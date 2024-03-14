@@ -38,7 +38,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/ReginYuan/v2024.git
+To https://github.com/ReginYuan/electron-practice.git
    6525394..2694cf6  main -> main
 PS D:\Code\Electron\v2024> git push gitee main //提交gitee分支的命令
 Enumerating objects: 5, done.
@@ -48,6 +48,6 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Powered by GITEE.COM [GNK-6.4]
-To https://gitee.com/ReginYuan/v2024.git
+To https://gitee.com/ReginYuan/electron-practice.git
    64af868..8547e06  main -> main
 ```
