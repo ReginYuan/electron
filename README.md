@@ -13,10 +13,10 @@ logallrefupdates = true
 symlinks = false
 ignorecase = true
 [remote "origin"]
-url = https://github.com/ReginYuan/v2024.git
+url = https://github.com/ReginYuan/electron-practice.git
 fetch = +refs/heads/_:refs/remotes/origin/_
 [remote "gitee"]
-url = https://gitee.com/ReginYuan/v2024.git
+url = https://gitee.com/ReginYuan/electron-practice.git
 fetch = +refs/heads/_:refs/remotes/origin/_
 [branch "main"]
 remote = origin
