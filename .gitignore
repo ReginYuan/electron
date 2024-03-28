@@ -2,3 +2,4 @@ desktopCamera/node_modules/*
 ipc/node_modules/*
 isolation/node_modules/*
 menu/node_modules/*
+dialog/node_modules/*
