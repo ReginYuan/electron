@@ -3,3 +3,4 @@ ipc/node_modules/*
 isolation/node_modules/*
 menu/node_modules/*
 dialog/node_modules/*
+camera/node_modules/*
