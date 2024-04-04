@@ -1,8 +1,17 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  // 向主进程发送消息退出应用
+  quit: () => {
+    ipcRenderer.send('quit')
+  },
+  // 向主进程发送消息坐标拖动窗口
+  drag: (opt: { x: number; y: number }) => {
+    ipcRenderer.invoke('drag', opt)
+  }
+}
 
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise

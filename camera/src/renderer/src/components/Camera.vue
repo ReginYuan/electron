@@ -1,13 +1,16 @@
 <template>
-  <main class="w-screen h-screen flex overflow-hidden">
-    <video class="object-cover h-full"></video>
+  <main class="w-screen h-screen overflow-hidden" :class="{ 'rounded-full': config.rounded }"
+    :style="`border:solid ${config.borderWidth} ${config.borderColor}`">
+    <video class="object-cover h-full" :class="{ 'rounded-full': config.rounded }"></video>
   </main>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import useConfig from '../composables/useConfig'
-const { config } = useConfig()
+// import useConfig from '../composables/useConfig'
+// const { config } = useConfig()
+import { useConfigStroe } from '@renderer/stores/useConfigStore'
+const { config } = useConfigStroe()
 onMounted(async () => {
   /**
    * Navigator.mediaDevices 只读属性返回一个 MediaDevices 对象，
@@ -25,7 +28,7 @@ onMounted(async () => {
   const constraints = {
     audio: false,
     video: {
-      deviceId: config.value.deviceId
+      deviceId: config.deviceId
     }
   } as MediaStreamConstraints
   navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
@@ -35,5 +38,5 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 </style>

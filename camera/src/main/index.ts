@@ -2,7 +2,8 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-
+import { createIpcMain } from './ipcMain'
+import './ipcDrag'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -44,7 +45,7 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
-  mainWindow.webContents.openDevTools()
+  if (is.dev) mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
@@ -64,7 +65,10 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
+  // 创建主窗口
   createWindow()
+  //主进程监听渲染进程发来的信息
+  createIpcMain()
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
