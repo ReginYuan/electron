@@ -1,9 +1,8 @@
 import { ipcMain, Menu, app, MenuItemConstructorOptions } from 'electron'
 
-// 创建ipcMain 实现推出功能
-export const createIpcMain = () => {
+// 创建ipcMain 实现退出功能
+export const createIpcQuit = () => {
   ipcMain.on('quit', () => {
-    console.log('11111')
     const template = [
       {
         label: '退出',

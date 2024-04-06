@@ -13,6 +13,7 @@ const { drag } = useDrag()
 drag.run()
 
 const { config } = useConfigStroe()
+// 退出功能
 const quit = () => {
   window.api.quit()
 }

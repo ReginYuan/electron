@@ -2,8 +2,9 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { createIpcMain } from './ipcMain'
+import { createIpcQuit } from './ipcQuit'
 import './ipcDrag'
+import { createIpcTry } from './ipcTry'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -18,6 +19,8 @@ function createWindow(): void {
     transparent: true, //设置背景透明
     frame: false, //设置边框消失
     show: false,
+    skipTaskbar: false, //隐藏任务栏
+    icon: join(__dirname, '../../resources/mirror.png'), //设置默认图标
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -67,14 +70,17 @@ app.whenReady().then(() => {
 
   // 创建主窗口
   createWindow()
-  //主进程监听渲染进程发来的信息
-  createIpcMain()
-
+  // 摄像头右键退出功能
+  createIpcQuit()
+  // 托盘图标
+  createIpcTry()
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+  //隐藏苹果dock图标
+  if (process.platform == 'darwin') app.dock.hide()
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
