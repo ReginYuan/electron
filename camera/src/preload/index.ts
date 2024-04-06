@@ -10,6 +10,10 @@ const api = {
   // 向主进程发送消息坐标拖动窗口
   drag: (opt: { x: number; y: number }) => {
     ipcRenderer.invoke('drag', opt)
+  },
+  // 向主进程发送设置窗口大小消息
+  setWindowSize: (opt: any) => {
+    ipcRenderer.send('setWindowSize', opt)
   }
 }
 

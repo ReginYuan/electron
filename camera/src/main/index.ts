@@ -5,11 +5,12 @@ import icon from '../../resources/icon.png?asset'
 import { createIpcQuit } from './ipcQuit'
 import './ipcDrag'
 import { createIpcTry } from './ipcTry'
+import './ipcSetWindowSize'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 300,
-    height: 300,
+    width: 500,
+    height: 280,
     minHeight: 250,
     minWidth: 250,
     maxHeight: 500,
@@ -28,9 +29,6 @@ function createWindow(): void {
       sandbox: false
     }
   })
-
-  // 设置窗口缩放
-  mainWindow.setAspectRatio(1)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
