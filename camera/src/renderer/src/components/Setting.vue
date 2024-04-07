@@ -16,7 +16,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// const { config, updateConfig } = useConfig()
 // import useConfig from '../composables/useConfig'
 // const { config, updateConfig } = useConfig()
 import { useConfigStroe } from '@renderer/stores/useConfigStore'

@@ -10,10 +10,8 @@ export const useConfigStroe = defineStore(
       borderColor: '#ffffff',
       rounded: false
     })
-    const updateConfig = () => {}
     return {
-      config,
-      updateConfig
+      config
     }
   },
   {

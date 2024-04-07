@@ -21,7 +21,7 @@ const changeRound = () => {
   if (config.rounded) {
     window.api.setWindowSize({ aspectRatio: 1, width: 300, height: 300 })
   } else {
-    window.api.setWindowSize({ aspectRatio: 16 / 9, width: 500, height: 280 })
+    window.api.setWindowSize({ aspectRatio: 16 / 9, width: 500, height: 300 })
   }
 }
 </script>
